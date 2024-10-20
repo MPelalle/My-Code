@@ -1,0 +1,1306 @@
+/*Parametros generales*/
+* { 
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    
+}
+.footer {
+    background-color: #2E2E2E;
+    padding: 20px;
+}
+.footer-title {
+    color: #F9F9F9;
+    text-align: center;
+    font-size: 25px;
+}
+
+/*HEADER STARTS*/
+.header { /*tamaño del header en general */
+    height: 100px;
+}
+
+.nav { /*configuracion del nav*/
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    padding: 0px 10px 0 10px;
+    height: 100px;
+
+    background-color: #2E2E2E;
+    z-index: 10;
+    overflow-y: hidden;
+}
+
+.logo { /*logo en medio del nav*/
+    height: 150px;
+    width: 150px;
+}
+
+.toggle-menu { /* configuración del menu que se despliega*/
+    background-color: #F9F9F9;
+    height: 82vh;
+    width: 22vw;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    position: relative;
+
+    box-shadow: 
+    -5px 0 10px -5px rgba(0, 0, 0, 0.5), 
+    5px 0 10px -5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    
+    transform: translateX(-150%);
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+.active { /*esta clase le da la posibilidad de activar el menu desplegado*/
+    transform: translateX(0);
+    z-index: 10;
+}
+
+.bars--menu { /*div que genera las barras para abrir el menu*/
+    height: 30px;
+    width: 30px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.bars--menu span { /*esta es la configuracion de las barras directamente*/
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #FF8C42;
+    margin-top: 6px;
+    transition: all 0.5s;
+    transform-origin: 0px 100%;
+}
+
+/*display de las 3 lineas que conforman el menu desplegable, para convertirlas en X*/
+.line1 {
+    transform: rotate(45deg) translate(-2px, 1px);
+}
+.line3 {
+    transform: rotate(-45deg) translate(-4px, 2px);
+}
+.line2 {
+    opacity: 0;
+    margin-left: -30px;
+}
+/* ---------------------*/
+
+
+.menu-desplegado { /*configuracion del menu desplegado*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+
+    overflow-y: hidden;
+    width: 100%;
+}
+.item-menu { /*configuracion de cada item del menu desplegado*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 99%;
+    height: 70px;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: #F3F4F6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.3s ease;
+    border-bottom: 1px solid #E0E0E0;
+    transition: transform 0.3s ease;
+    
+}
+.item-menu:hover { /*animacion del menu desplegado*/
+    background-color: #FF8C42;
+    transition: 0.5s;
+    transform: scale(1.02);
+    
+}
+
+.link-TM { /*configuracion del link del menu desplegado*/
+    text-decoration: none;
+    font-size: 25px;
+    color: #FF8C42;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.link-TM:hover { /*animacion del link del menu desplegado*/
+    color: #F3F4F6; 
+    transition: 0.5s;
+}
+.item-menu:hover .link-TM { /*animacion del link del menu desplegado*/
+    color: #F3F4F6; 
+}
+
+.logo-TM { /*configuracion del logo del menu desplegado*/
+    width: 350px;
+    height: 70px;
+    filter: drop-shadow(1px 1px 20px #2E2E2E);
+    margin: 0 auto;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.icon { /*configuracion de los iconos del menu desplegado*/
+    text-decoration: none;
+    font-size: 35px;
+    color: #FF8C42;
+    transition: 0.5s;
+    margin: 10px;
+}
+.icon:hover { /*animacion de los iconos del menu desplegado*/
+    color: #F3F4F6; 
+    transition: 0.5s;
+}
+.item-menu:hover .icon { /*animacion de los iconos del menu desplegado*/
+    color: #F3F4F6;
+    transition: 0.5s;
+}
+
+.about-me { /*configuracion del div del menu desplegado de "about me"*/
+    background-color: #F9F9F9;
+    height: 82vh; 
+    width: 25vw; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: absolute;
+    top: 100px; 
+    right: 0;
+
+    box-shadow: 
+    -5px 0 10px -5px rgba(0, 0, 0, 0.5), 
+    5px 0 10px -5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    z-index: 1;
+    transition: transform 0.5s;
+    transform: translateY(-115%);
+}
+
+.about-me-open { /*animacion del div del menu desplegado de "about me"*/
+    transition: transform 0.5s;
+    transform: translateY(0); 
+}
+
+/* Estilos de Iconos */
+.about-me-icon {
+    color: #FF8C42;
+    font-size: 50px;
+    cursor: pointer;
+    transition: color 0.5s; 
+}
+
+.about-me-div { /*configuracion de la caja que envuelve el icono para acceder a "about me*/
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.about-me-div:hover { /*animacion de la caja que envuelve el icono para acceder a "about me"*/
+    background-color: #FF8C42;
+}
+
+/* Hover para iconos */
+.about-me-icon:hover,
+.about-me-div:hover .about-me-icon {
+    color: #F3F4F6; 
+}
+
+/* Estilos de Títulos e Imágenes */
+.about-me-title { /*configuracion del título de "about me"*/
+    width: 300px;
+    height: 75px;
+    margin: 0 auto;
+}
+
+.about-me-img { /*configuracion de la imagen de "about me"*/
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    box-shadow: 1px 1px 10px 1px #000a;
+}
+
+.about-me-div-img { /*configuracion de la caja que envuelve la imagen de "about me"*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 100%;
+}
+
+/* Textos */
+.about-me-div-text { /*configuracion de la caja que envuelve el texto de "about me"*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; 
+    flex-direction: column;
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    gap: 20px;
+    padding: 30px; 
+}
+
+.about-me-text, .text-AM { /*configuracion del texto de "about me"*/
+    font-size: 16px;
+    text-align: center;
+    white-space: normal; 
+    overflow-wrap: break-word; 
+    width: 100%;
+}
+
+/* Lista de Iconos */
+.ul-AM {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-html, .icon-css, .icon-js, .icon-react, .icon-node, .icon-db, .icon-check {
+    font-size: 30px;
+}
+
+.icon-html { color: #F16529; }
+.icon-css { color: #33A4DA; }
+.icon-js { color: #F7DF1E; }
+.icon-react { color: #61DBFB; }
+.icon-node { color: #339933; }
+.icon-db { color: #00758F; }
+.icon-check { color: #339933; }
+
+.link-fixed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 99%;
+}
+/*HEADER ENDS*/
+
+/*INFORMACION STARTS*/
+.questions-div {  /* Este es el div que muestra el fondo de la informacion*/
+    background-color: antiquewhite;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 30px;
+    box-shadow: 1px 10px 30px 1px #000a;
+    margin-top: 50px;
+}
+.piti { /*Esta es una clase mas agregada para cambiar el alto del componente sin modificar al original, pero usando sus parametros*/
+    width: 900px;
+}
+p { /*este es el Parrafo de la informacion*/
+    color: #333;
+    font-size: 20px;
+}
+/*INFORMACION ENDS*/
+/*CONTACTS STARTS*/
+.ig { /*Logo de ig*/
+    color: #E1306C;
+    font-size: 50px;
+    cursor: pointer;
+}
+.gmail { /*Logo de gmail*/
+    color: #EA4335;
+    font-size: 50px;
+    cursor: pointer;
+}
+.ln { /*Logo de ln*/
+    color: #0077B5;
+    font-size: 50px;
+    cursor: pointer;
+}
+.gh { /*Logo de gh*/
+    color: #333;
+    font-size: 50px;
+    cursor: pointer;
+}
+.contact-div { /*Div que muestra el fondo de los logos de contacto*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 90px;
+    background-color: antiquewhite;
+    border-radius: 30px;
+    box-shadow: 1px 10px 30px 1px #000a;
+    padding: 50px;
+}
+.shadow-inset-lr {
+	animation: shadow-inset-lr 10s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+}
+@keyframes shadow-inset-lr {
+    0% {
+        box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0), inset 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        box-shadow: inset -6px 0 14px -6px rgba(0, 0, 0, 0.5), inset 6px 0 14px -6px rgba(0, 0, 0, 0.9);
+    }
+    }
+/*CONTACTS ENDS*/
+/*-------------------------------------------------------------------------------------------------------*/
+
+/*PRIMER INTERFACE STARTS*/
+.body { /*configuracion del body*/
+    background-color: #F5F5DC;
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.title { /*configuracion del titulo*/
+    font-size: 50px;
+    text-align: center;
+    color: #F3F4F6;
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+}
+
+.container { /*box que contiene todos los elementos, dentro del body*/
+    padding: 30px;
+    background-color: #FF8C42;
+    height: 100px;
+    width: 800px;
+    border-radius: 30px;
+    box-shadow: 1px 10px 30px 1px #000a;
+    margin: auto;
+    margin-top: 100px;
+    
+}
+.subtitle-box { /*box que contiene el subtitulo*/
+    padding: 30px;
+    background-color: #FF8C42;
+    height: 100px;
+    width: 1000px;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shadow-inset-center {
+	animation: shadow-inset-center 10s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite both;
+}
+@keyframes shadow-inset-center {
+    0% {
+        box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+    100% {
+        box-shadow: inset 0 0 14px 0px rgba(0, 0, 0, 1);
+    }
+    }
+
+    .subtitle { /*configuracion del subtitulo*/
+        font-size: 50px;
+        text-align: center;
+        color: #F3F4F6;
+        font-family: "Source Code Pro", monospace;
+        padding: 10px; 
+        
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+        letter-spacing: 2px; 
+    }
+    .icon-subtitle { /*configuracion del icono del subtitulo*/
+        font-size: 70px;
+    }
+    
+/*MODAL STARTS*/
+.modal { /*configuracion del modal, establece el blur y la posicion respecto al contenido de la caja sape*/
+    position: absolute;
+    width: 100%;
+    height: 88.9%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.close-modal { /*configuracion del icono de cerrar el modal*/
+    display: none;
+}
+.sape { /*sape es la caja modal en si, es lo que muestra dentro el modal*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background-color: #F3F4F6;
+    height: 300px;
+    width: 800px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 30px 1px #ff8a428e;
+    border: none;
+    margin: auto ;
+    margin-top: 70px;
+}
+.modal-title { /*configuracion del titulo del modal*/
+    font-size: 40px; 
+    color: #FF8C42; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+    letter-spacing: 2px;
+    text-align: center; 
+    margin: 20px 0; 
+    padding: 10px; 
+    border-bottom: 3px solid #FF8C42; 
+    font-family: "Montserrat", sans-serif;
+}
+
+.modal-input { /*configuracion del input del modal*/
+    width: 300px; 
+    padding: 10px 15px; 
+    font-size: 16px; 
+    text-align: center;
+    border-radius: 5px; 
+    outline: none; 
+    transition: all 0.3s ease; 
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2); 
+}
+.modal-input:focus { /*configuracion del input del modal cuando se hace focus*/
+    border-color: #FF8C42; 
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); 
+}
+.boton-dialog { /*configuracion del boton del modal*/
+    background-color: #FF8C42; 
+    color: #fff; 
+    border: none; 
+    padding: 12px 24px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    margin-top: 20px;
+    font-family: "Montserrat", sans-serif;
+}
+.boton-dialog:hover { /*configuracion del boton del modal cuando se hace hover*/
+    background-color: #e67e3a; 
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); 
+}
+/*MODAL ENDS*/
+
+.btn-box { /*configuracion del contenedor del boton del modal*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.get-started { /*configuracion del boton del modal*/
+    background-color: #F3F4F6;
+    height: 100px;
+    width: 500px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 1px 10px 30px 1px #000a;
+    font-size: 30px;
+    color: #FF8C42;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Montserrat", sans-serif;
+}
+.icon-start { /*configuracion del icono del boton para comenzar*/
+    font-size: 30px;
+    color: #FF8C42;
+}
+.link-to-app { /*configuracion del link del boton para comenzar*/
+    text-decoration: none;
+    color: #FF8C42;
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 500px;
+}
+/*PRIMER INTERFACE ENDS*/
+/*---------------------------------------------------------------------------------------*/
+
+/*SEGUNDA INTERFACE STARTS */
+    /* CODE DISPLAY STARTS */
+    .piton { /*establece un alto para el body sin modificar las propiedades del body*/
+        height: 800px;
+    }
+    .alfin { /*es el box contenedor de los textareas*/
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        overflow: auto;
+    }
+    /* CODE DISPLAY ENDS */    
+
+    /*CREATING CODE STARTS*/
+    .mas-granded { /*aumentamos el tamaño del body sin afectar el body*/
+        height: 1200px;
+    } 
+    
+    /*MODAL STARTS*/
+    .modal-mas-grande { /*aumentamos el tamaño de la caja modal*/
+        height: 1200px;
+    }
+    .creating-code-box { /*configuracion de la caja de creacion de codigo*/
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #FF8C42;
+        margin: auto 0;
+        width: 70%;
+        border-radius: 30px;
+        box-shadow: 1px 10px 30px 1px #000a;
+        padding: 50px;
+        height: 1000px;
+    }
+    .description { /*configuracion del texto de la caja de creacion de codigo*/
+        font-size: 20px;
+        text-align: center;
+        color: #F3F4F6;
+        font-family: "Source Code Pro", monospace;
+        letter-spacing: 2px;
+    }
+    .area-title { /*configuracion del textarea de la caja de creacion de codigo*/
+        height: 200px;
+        resize: none;
+        width: 600px;
+    }
+    .oto { /*se encarga del alto de la caja sinn interferir en la configuracion de sape*/
+        height: 700px;
+    }
+    .text-input { /*configuracion del input de la caja de creacion de codigo*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px
+    }
+    
+    .buttons-dialog { /*configuracion de los botones del modal*/
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px
+    }
+    .btn-dialog { /*configuracion de los botones del modal*/
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    label {
+        cursor: pointer;
+    }
+    /*MODAL ENDS*/
+    
+    .description-area { /*configuracion de la caja del textarea*/
+        width: 600px;
+        height: auto;
+        max-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        text-align: center;
+        color: #F3F4F6;
+        font-family: "Source Code Pro", monospace;
+        padding: 10px;
+        overflow-wrap: break-word;
+        overflow: auto;
+        box-sizing: border-box;
+    }
+
+    /*CREATING CODE ENDS*/
+    /*MODAL CREATING CODE STARTS*/
+    .toko { /*se encarga del alto de la caja sinn interferir en la configuracion de details-cc*/
+        height: 700px;
+    }
+    .diti { /*Es la configuracion de los botones en "code display", logrando que esten en row sin interferir con los estilos de botones*/
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+    .modal-details {  /*cambia la altura de la caja sin modificar la propiedades de la caja*/
+        height: 700px;
+    }
+    
+    .general-modal { /*configuracion de la caja de modal cuando le das click a info*/
+        width: 50%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+            left: 25%;
+            top: 0;
+        background-color: aliceblue;
+        transform: translateY(-100%);
+        transition: 0.6s;
+        box-shadow: 1px 10px 30px 1px #000a;
+        border-radius: 30px;
+        margin: auto;
+    }
+    .modal-open { /* activacion del modal*/
+        transform: translateY(0);
+        transition: 0.6s;
+    
+    }
+    .modalito { /*configuracion dentro del modal*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #2E2E2E; 
+        padding: 20px; 
+        width: 90%; 
+        max-width: 600px; 
+        overflow: hidden; 
+        margin: 20px auto; 
+        width: 90%; 
+    }
+    
+    .modal-title-2 { /*configuracion del titulo en caja modal*/
+        font-size: 24px; 
+        color: #FF8C42; 
+        margin-bottom: 20px; 
+        text-align: center; 
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+        letter-spacing: 2px;
+        margin: 20px 0; 
+        padding: 10px; 
+        border-bottom: 3px solid #FF8C42; 
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    
+    h2 {
+        font-size: 20px; 
+        color: #FF8C42;
+        margin-bottom: 15px; 
+        text-align: center; 
+    }
+    /*MODAL CREATING CODE ENDS*/
+
+    /* CREAR CODIGO PRE STARTS */
+    .iti { /*cambia el tamaño en crear-codigo sin modificar el body */
+        height: 800px;
+    }
+    .title-CC { /*titulo en crear codigo "explore codes" */
+        font-size: 50px;
+        text-align: center;
+        color: #F3F4F6;
+        font-family: "Source Code Pro", monospace;
+        letter-spacing: 2px;
+    }
+    .container-CC { /*configuracion de la caja principal de crear-codigo*/
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #FF8C42;
+        margin: auto 0;
+        width: 70%;
+        border-radius: 30px;
+        box-shadow: 1px 10px 30px 1px #000a;
+        padding: 50px;
+        height: 650px;
+    
+    }
+    .details-CC { /*configuracion de la caja de crear-codigo*/
+        background-color: #F3F4F6;
+        margin: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: space-around;
+        align-items: center;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 1px 10px 30px 1px #000a;
+        width: 70%;
+        height: 400px;
+        overflow: auto;
+    }
+    .details-div-CC { /*contenido dentro de los codigos nuevos agregados*/
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        
+    }
+    .cuatro:hover { /*animacion en estado de hover para los codigos recien agregados*/
+        background-color: #FF8C42;
+        border-radius: 10px;
+        box-shadow: 1px 10px 30px 1px #000a;
+        transition: 0.6s;
+        cursor: pointer;
+    }
+    .text-CC { /*titulo de los codigos agregados*/
+        font-size: 25px;
+        font-weight: 600;
+        color: #2E2E2E;
+        transition: 0.6s;
+        font-family: "Source Code Pro", monospace;
+        text-decoration: none;
+    }
+    .cuatro:hover .fourth { /*color de los codigos agregados*/
+        color: #F3F4F6; 
+        transition: 0.6s;
+    }
+    
+    .link-fix { /*link de los codigos agregados*/
+        width: 100%;
+    }
+    .cuatro { /*configuracion de los codigos agregados*/
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    /* CREAR CODIGO PRE ENDS */
+    
+    /*SEGUNDA MAIN STARTS*/
+    .container-2da-interface {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+        margin-top: 150px;
+    }
+    /*SEGUNDA MAIN ENDS*/
+
+/*SEGUNDA INTERFACE ENDS*/
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+
+/* MEDIA QUERIES STARTS*/
+
+
+@media (max-width: 2000px) {
+   
+
+    .nav {
+        padding: 0 30px; 
+    }
+
+    .logo {
+        height: 100px; 
+        width: 100px;
+    }
+    .logo-TM {
+        width: 70%;
+        height: 50px;
+    }
+
+    .toggle-menu {
+        width: 20vw; 
+    }
+
+    .item-menu {
+        height: 80px; 
+    }
+
+    .link-TM {
+        font-size: 30px; 
+    }
+
+    .about-me {
+        width: 20vw; 
+    }
+
+    .about-me-title {
+        width: 400px; 
+    }
+
+    .questions-div {
+        padding: 60px; 
+    }
+
+    .contact-div {
+        padding: 60px; 
+    }
+
+    .get-started {
+        width: 600px;
+        font-size: 36px; 
+    }
+    .gil {
+        width: 200px;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .header {
+        height: 80px; 
+    }
+
+    .nav {
+        padding: 0 5px; 
+        flex-direction: column; 
+    }
+
+    .logo {
+        height: 80px; 
+        width: 80px;
+    }
+
+    .toggle-menu {
+        width: 90vw; 
+        height: 70vh; 
+    }
+
+    .item-menu {
+        height: 50px; 
+    }
+
+    .link-TM {
+        font-size: 18px; 
+    }
+
+    .about-me {
+        width: 90vw; 
+        padding: 10px; 
+    }
+
+    .about-me-title {
+        width: 100%; 
+        font-size: 20px;
+    }
+
+    .questions-div {
+        padding: 20px; 
+    }
+
+    .contact-div {
+        padding: 20px; 
+        flex-direction: column; 
+    }
+
+    .get-started {
+        width: 100%;
+        font-size: 24px; 
+    }
+    .text-input {
+        width: 100%;
+    }
+    .area-title {
+        width: 100%;
+    }
+    .description-area {
+        width: 100%;
+    }
+    .cuatro {
+        width: 300px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #FF8C42;
+        border-radius: 10px;
+    }
+    .fourth {
+        color: #E0E0E0;
+    }
+    .details-CC {
+        overflow-x: hidden;
+    }
+    .diti {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .header {
+        height: 80px;
+    }
+
+    .nav {
+        padding: 0 5px;
+        height: 80px;
+    }
+
+    .logo {
+        height: 120px;
+        width: 120px;
+    }
+
+    .toggle-menu {
+        width: 30vw; 
+    }
+
+    .item-menu {
+        height: 60px; 
+        font-size: 20px; 
+    }
+
+    .link-TM {
+        font-size: 20px; 
+    }
+
+    .logo-TM {
+        width: 300px; 
+    }
+
+    .about-me {
+        width: 40vw; 
+    }
+
+    .about-me-title {
+        width: 250px; 
+    }
+
+    .about-me-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .questions-div {
+        padding: 20px; 
+    }
+
+    p {
+        font-size: 18px; 
+    }
+
+    .contact-div {
+        padding: 30px; 
+    }
+
+    .modal {
+        height: 80%;
+    }
+
+    .sape {
+        width: 90%; 
+    }
+
+    .modal-title {
+        font-size: 30px; 
+    }
+
+    .modal-input {
+        width: 80%; 
+    }
+
+    .btn-box {
+        margin-top: 50px; 
+    }
+
+    .get-started {
+        width: 90%; 
+        font-size: 25px; 
+    }
+
+    .icon-start {
+        font-size: 25px; 
+    }
+    .text-input {
+        width: 100%;
+    }
+    .area-title {
+        width: 100%;
+    }
+    .description-area {
+        width: 100%;
+    }
+    .cuatro {
+        width: 300px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #FF8C42;
+        border-radius: 10px;
+    }
+    .details-CC {
+        overflow-x: hidden;
+    }
+    .diti {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+@media (min-width: 700px) {
+    .area-title {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+    .details-CC {
+        overflow-x: hidden;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .header {
+        height: 70px;
+    }
+
+    .nav {
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .logo {
+        height: 100px; 
+        width: 100px;
+    }
+
+    .toggle-menu {
+        width: 100%; 
+    }
+
+    .item-menu {
+        height: 50px; 
+        font-size: 18px; 
+    }
+
+    .link-TM {
+        font-size: 18px; 
+    }
+
+    .about-me {
+        width: 90vw; 
+    }
+
+    .about-me-title {
+        width: 200px;
+    }
+
+    .questions-div {
+        padding: 15px; 
+    }
+
+    p {
+        font-size: 16px; 
+    }
+
+    .contact-div {
+        flex-direction: column; 
+        padding: 20px; 
+    }
+
+    .modal-input {
+        width: 90%; 
+    }
+
+    .get-started {
+        width: 95%; 
+        font-size: 20px; 
+    }
+    .text-input {
+        width: 100%;
+    }
+    .area-title {
+        width: 100%;
+    }
+    .description-area {
+        width: 100%;
+    }
+    .cuatro {
+        width: 300px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #FF8C42;
+        border-radius: 10px;
+    }
+    .fourth {
+        color: #E0E0E0;
+    }
+    .details-CC {
+        overflow-x: hidden;
+    }
+    .diti {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 60px; 
+    }
+
+    .nav {
+        padding: 0 2px; 
+    }
+
+    .logo {
+        height: 80px;
+        width: 80px;
+    }
+
+    .item-menu {
+        height: 40px;
+        font-size: 16px; 
+    }
+
+    .link-TM {
+        font-size: 16px; 
+    }
+
+    .about-me {
+        width: 100vw; 
+    }
+
+    .about-me-title {
+        width: 150px; 
+    }
+
+    .questions-div {
+        padding: 10px; 
+    }
+
+    p {
+        font-size: 14px; 
+    }
+
+    .contact-div {
+        flex-direction: column; 
+    }
+
+    .modal-input {
+        width: 100%; 
+    }
+
+    .get-started {
+        width: 100%; 
+        font-size: 18px;
+    }
+    .text-input {
+        width: 100%;
+    }
+    .area-title {
+        width: 100%;
+    }
+    .description-area {
+        width: 100%;
+    }
+    .cuatro {
+        width: 300px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #FF8C42;
+        border-radius: 10px;
+    }
+    .fourth {
+        color: #E0E0E0;
+    }
+    .details-CC {
+        overflow-x: hidden;
+    }
+    .diti {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 330px) {
+    .header {
+        height: 50px; 
+    }
+
+    .nav {
+        padding: 0 1px; 
+    }
+
+    .logo {
+        height: 60px; 
+        width: 60px;
+    }
+
+    .item-menu {
+        height: 35px; 
+        font-size: 14px; 
+    }
+
+    .link-TM {
+        font-size: 14px; 
+    }
+
+    .about-me {
+        width: 100vw; 
+    }
+
+    .about-me-title {
+        width: 120px; 
+    }
+
+    .questions-div {
+        padding: 5px; 
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    .contact-div {
+        flex-direction: column; 
+    }
+
+    .modal-input {
+        width: 100%; 
+    }
+
+    .get-started {
+        width: 100%; 
+        font-size: 16px; 
+    }
+    .text-input {
+        width: 100%;
+    }
+    .area-title {
+        width: 100%;
+    }
+    .description-area {
+        width: 100%;
+    }
+    .cuatro {
+        width: 300px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #FF8C42;
+        border-radius: 10px;
+    }
+    .fourth {
+        color: #E0E0E0;
+    }
+    .details-CC {
+        overflow-x: hidden;
+    }
+    .diti {
+        flex-direction: column;
+        gap: 0;
+    }
+
+}
+
