@@ -16,6 +16,7 @@
     font-size: 25px;
 }
 
+
 /*HEADER STARTS*/
 .header { /*tamaño del header en general */
     height: 100px;
@@ -858,7 +859,7 @@ p { /*este es el Parrafo de la informacion*/
     }
     .subtitle-box{
         width: 50%;
-        height: 500px;
+        height: 300px;
         margin: auto;
         margin-top: 30px;
     }
