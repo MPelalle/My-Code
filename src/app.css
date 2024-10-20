@@ -856,6 +856,23 @@ p { /*este es el Parrafo de la informacion*/
     .gil {
         width: 200px;
     }
+    .subtitle-box{
+        width: 50%;
+        height: 500px;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .subtitle {
+        font-size: 30px;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .title {
+        font-size: 25px;
+    }
 }
 
 
@@ -935,6 +952,23 @@ p { /*este es el Parrafo de la informacion*/
     .diti {
         flex-direction: column;
         gap: 0;
+    }
+    .subtitle-box{
+        width: 20%;
+        height: 500px;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .title {
+        font-size: 12px;
     }
 }
 
@@ -1047,6 +1081,20 @@ p { /*este es el Parrafo de la informacion*/
         flex-direction: column;
         gap: 0;
     }
+    .subtitle-box{
+        width: 50%;
+        height: 500px;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .title {
+        font-size: 20px;
+    }
 }
 @media (min-width: 700px) {
     .area-title {
@@ -1064,10 +1112,15 @@ p { /*este es el Parrafo de la informacion*/
     .header {
         height: 70px;
     }
-
+.subtitle-box{
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+}
     .nav {
-        flex-direction: column; 
-        height: auto; 
+        flex-direction: row; 
+        height: auto;
+        width: 100%; 
     }
 
     .logo {
@@ -1142,6 +1195,14 @@ p { /*este es el Parrafo de la informacion*/
     .diti {
         flex-direction: column;
         gap: 0;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .title {
+        font-size: 16px;
     }
 }
 
@@ -1222,6 +1283,33 @@ p { /*este es el Parrafo de la informacion*/
         flex-direction: column;
         gap: 0;
     }
+    .subtitle-box{
+        width: 70%;
+        height: 300px;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .title {
+        font-size: 12px;
+    }
+    .box-father {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10px;
+        height: 100vh;
+        padding: 40px;
+        
+    }
 }
 
 @media (max-width: 330px) {
@@ -1300,6 +1388,33 @@ p { /*este es el Parrafo de la informacion*/
     .diti {
         flex-direction: column;
         gap: 0;
+    }
+    .subtitle-box{
+        width: 70%;
+        height: 300px;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .title {
+        font-size: 16px;
+    }
+    .box-father {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10px;
+        height: 100vh;
+        padding: 40px;
+        
     }
 
 }
