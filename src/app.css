@@ -971,6 +971,12 @@ p { /*este es el Parrafo de la informacion*/
     .title {
         font-size: 12px;
     }
+    .oto {
+        height: 900px;
+    }
+    .modal-mas-grande {
+        height: 100%;
+    }
 }
 
 
@@ -1311,6 +1317,12 @@ p { /*este es el Parrafo de la informacion*/
         padding: 40px;
         
     }
+    .oto {
+        height: 900px;
+    }
+    .modal-mas-grande {
+        height: 100%;
+    }
 }
 
 @media (max-width: 330px) {
@@ -1416,6 +1428,12 @@ p { /*este es el Parrafo de la informacion*/
         height: 100vh;
         padding: 40px;
         
+    }
+    .oto {
+        height: 900px;
+    }
+    .modal-mas-grande {
+        height: 100%;
     }
 
 }
