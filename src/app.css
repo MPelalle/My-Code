@@ -654,7 +654,7 @@ p { /*este es el Parrafo de la informacion*/
     
     .general-modal { /*configuracion de la caja de modal cuando le das click a info*/
         width: 50%;
-        height: 70%;
+        height: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -823,7 +823,7 @@ p { /*este es el Parrafo de la informacion*/
     }
 
     .toggle-menu {
-        width: 20vw; 
+        width: 40vw; 
     }
 
     .item-menu {
@@ -873,6 +873,9 @@ p { /*este es el Parrafo de la informacion*/
     }
     .title {
         font-size: 25px;
+    }
+    .about-me {
+        width: 60vw;
     }
 }
 
@@ -977,6 +980,9 @@ p { /*este es el Parrafo de la informacion*/
     .modal-mas-grande {
         height: 100%;
     }
+    .about-me {
+        width: 60vw;
+    }
 }
 
 
@@ -1009,7 +1015,8 @@ p { /*este es el Parrafo de la informacion*/
     }
 
     .logo-TM {
-        width: 300px; 
+        width: 150px;
+        height: 70px; 
     }
 
     .about-me {
@@ -1111,6 +1118,9 @@ p { /*este es el Parrafo de la informacion*/
     }
     .details-CC {
         overflow-x: hidden;
+    }
+    .about-me {
+        width: 60vw;
     }
     
 }
